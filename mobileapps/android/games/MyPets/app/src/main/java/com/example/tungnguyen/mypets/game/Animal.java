@@ -10,7 +10,8 @@ import android.graphics.drawable.Drawable;
 
 public abstract class Animal {
     static Bitmap shape;
-    private Rect bound;
+    protected boolean selected;
+    protected Rect bound;
     protected Point location;
     protected Context context;
 
@@ -18,6 +19,18 @@ public abstract class Animal {
         this.context = context;
         location = new Point();
         bound = new Rect();
+    }
+
+    public Rect getBound() {
+        return bound;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 
     public abstract String makeNoise();

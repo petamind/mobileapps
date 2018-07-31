@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
 
 public class PetHouseView extends View {
     private Logger logger;
+    private Animal selectedPet;
     private ArrayList<Animal> pets;
     private int background;
     private Paint paint;
@@ -57,6 +59,9 @@ public class PetHouseView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         myGestureDetector.onTouchEvent(event);
+        if(selectedPet != null){
+            selectedPet.move(new Point((int)event.getX(), (int)event.getY()));
+        }
         invalidate();
         return true;
     }
@@ -71,12 +76,24 @@ public class PetHouseView extends View {
 
         @Override
         public void onShowPress(MotionEvent e) {
-            for (Animal a: pets
-                 ) {
-                if(a.)
 
-            }
+
             super.onShowPress(e);
+        }
+
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+            for (Animal a: pets
+                    ) {
+                if(a.getBound().contains((int)e.getX(), (int)e.getY())){
+                    a.setSelected(true);
+                    selectedPet = a;
+                    logger.log(Level.INFO, "Selected");
+                    break;
+                }
+            }
+
+            return super.onSingleTapConfirmed(e);
         }
     }
 }

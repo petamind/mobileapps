@@ -22,6 +22,7 @@ public class Dog extends Animal {
         location.set(100, 100);
         shape = BitmapFactory.decodeResource(context.getResources(),
                 R.drawable.dog);
+        this.bound.set(location.x, location.y, location.x+shape.getWidth(), location.y + shape.getHeight());
     }
 
 
@@ -40,7 +41,7 @@ public class Dog extends Animal {
     @Override
     public void move(Point newLocation) {
         this.location = newLocation;
-
+        this.bound.set(location.x, location.y, location.x+shape.getWidth(), location.y + shape.getHeight());
     }
 
 //    @Override
