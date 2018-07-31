@@ -68,5 +68,15 @@ public class PetHouseView extends View {
             logger.log(Level.INFO, "Drawing");
             return super.onDoubleTap(e);
         }
+
+        @Override
+        public void onShowPress(MotionEvent e) {
+            for (Animal a: pets
+                 ) {
+                if(a.)
+
+            }
+            super.onShowPress(e);
+        }
     }
 }
