@@ -35,5 +35,7 @@ public abstract class Animal {
 
     public abstract String makeNoise();
     public abstract void draw(Canvas canvas, Paint paint);
-    public abstract void move(Point newLocation);
+    public void move(Point newLocation){
+        this.location = newLocation;
+    };
 }

@@ -58,12 +58,45 @@ public class PetHouseView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                checkSelect(event);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                checkMove(event);
+                break;
+            case MotionEvent.ACTION_UP:
+                unselectPet();
+                break;
+        }
         myGestureDetector.onTouchEvent(event);
+
+        invalidate();
+        return true;
+    }
+
+    private void unselectPet() {
+        if(selectedPet != null){
+            selectedPet.setSelected(false);
+            selectedPet = null;
+        }
+    }
+
+    private void checkMove(MotionEvent event) {
         if(selectedPet != null){
             selectedPet.move(new Point((int)event.getX(), (int)event.getY()));
         }
-        invalidate();
-        return true;
+    }
+
+    private void checkSelect(MotionEvent e) {
+        for (Animal a: pets) {
+                if(a.getBound().contains((int)e.getX(), (int)e.getY())){
+                    a.setSelected(true);
+                    selectedPet = a;
+                    logger.log(Level.INFO, "Selected");
+                    break;
+                }
+        }
     }
 
     private class GestureListener extends android.view.GestureDetector.SimpleOnGestureListener{
@@ -72,28 +105,6 @@ public class PetHouseView extends View {
             pets.add(new Dog(getContext()));
             logger.log(Level.INFO, "Drawing");
             return super.onDoubleTap(e);
-        }
-
-        @Override
-        public void onShowPress(MotionEvent e) {
-
-
-            super.onShowPress(e);
-        }
-
-        @Override
-        public boolean onSingleTapConfirmed(MotionEvent e) {
-            for (Animal a: pets
-                    ) {
-                if(a.getBound().contains((int)e.getX(), (int)e.getY())){
-                    a.setSelected(true);
-                    selectedPet = a;
-                    logger.log(Level.INFO, "Selected");
-                    break;
-                }
-            }
-
-            return super.onSingleTapConfirmed(e);
         }
     }
 }
