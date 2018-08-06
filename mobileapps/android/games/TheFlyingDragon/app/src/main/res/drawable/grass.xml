@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:dither="true">
-    <gradient />
+    <gradient android:useLevel="false"
+        android:type="linear"
+        android:startColor="@android:color/darker_gray"
+        android:endColor="@android:color/holo_green_dark"/>
+    <size android:height="200dp"></size>
 
 </shape>
