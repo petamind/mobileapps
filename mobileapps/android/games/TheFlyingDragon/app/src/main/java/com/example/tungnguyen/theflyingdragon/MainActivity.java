@@ -1,5 +1,6 @@
 package com.example.tungnguyen.theflyingdragon;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -21,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.imageView).startAnimation(animation);
             Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.clock_turn);
             findViewById(R.id.imageView3).startAnimation(animation1);
+            AnimationDrawable dragonAnimationDrawable = (AnimationDrawable) findViewById(R.id.imageView4).getBackground();
+            if(!dragonAnimationDrawable.isRunning()){
+                dragonAnimationDrawable.start();
+            }
+            Animation dragonFlying = AnimationUtils.loadAnimation(this, R.anim.dragon_fly);
+            findViewById(R.id.imageView4).startAnimation(dragonFlying);
         }
     }
 }
