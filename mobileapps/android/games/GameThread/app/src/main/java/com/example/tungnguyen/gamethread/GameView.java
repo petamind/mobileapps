@@ -54,7 +54,7 @@ public class GameView extends SurfaceView {
 
 
     public void update() {
-               player.move();
+        player.move();
     }
 
     @Override
