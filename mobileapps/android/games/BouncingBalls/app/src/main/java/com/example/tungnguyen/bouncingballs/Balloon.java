@@ -3,6 +3,7 @@ package com.example.tungnguyen.bouncingballs;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.drawable.GradientDrawable;
 
 public class Balloon {
     private Point location;
@@ -89,5 +90,6 @@ public class Balloon {
             speedY = -speedY;
             location.y = (int)(screen_yMin + radius);
         }
+
     }
 }

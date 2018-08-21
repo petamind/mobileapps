@@ -1,13 +1,10 @@
 package com.example.tungnguyen.bouncingballs;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,8 +12,10 @@ import java.util.Random;
 
 public class CanvasSurface extends View {
 
-    private int screenWidth = 1080; ;//Default: portrait mode
-    private int screenHeight = 1794; ;//Default: portrait mode
+    private int screenWidth = 1080;
+    ;//Default: portrait mode
+    private int screenHeight = 1794;
+    ;//Default: portrait mode
     //Variables for detect and handle TouchEvent
     private float startX, startY;
     private float endX, endY;
@@ -45,12 +44,7 @@ public class CanvasSurface extends View {
         Paint paint = new Paint();
         ////////////////////////////////////////////////////////////////////////////////////////////
         //Draw all objects on canvas surface
-        //Draw the background image on canvas
-        //Bitmap background = BitmapFactory.decodeResource(this.getResources(), R.drawable.);
-//Rect src = new Rect(0, 0, background.getWidth(), background.getHeight());
-//        Rect dest = new Rect(0, 0, screenWidth, screenHeight);
-//        canvas.drawBitmap(background, src, dest, paint);//stretch background image to entire screen
-        //Step 3: Draw the RED balloon created above in the constructor on canvas
+
         balloon.draw(canvas, paint);
         ////////////////////////////////////////////////////////////////////////////////////////////
         //Step 4: Move the balloon around and check whether it collides the screen edges/walls
@@ -58,7 +52,7 @@ public class CanvasSurface extends View {
         ////////////////////////////////////////////////////////////////////////////////////////////
         //Rendering all objects during 10 milli-second before forcing the canvas surface to be redrawn
         try {
-            Thread.sleep(1000/50); //Pause the current thread to suspend execution for a specified period
+            Thread.sleep(1000 / 50); //Pause the current thread to suspend execution for a specified period
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
