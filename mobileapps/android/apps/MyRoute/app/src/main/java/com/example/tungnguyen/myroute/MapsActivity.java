@@ -146,8 +146,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             pDialog.dismiss();
 
+            //TODO: hard-coded and need to use GPS
             LatLng auckland = new LatLng(-36.856, 174.76);
-            mMap.addMarker(new MarkerOptions().position(auckland).title("Marker in Sydney"));
+            mMap.addMarker(new MarkerOptions().position(auckland).title("Marker in Auckland"));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(auckland, 15f));
 
         }
