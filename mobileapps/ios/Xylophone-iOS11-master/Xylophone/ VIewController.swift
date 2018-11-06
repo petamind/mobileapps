@@ -8,6 +8,9 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
+
 
 class ViewController: UIViewController{
     
@@ -19,12 +22,25 @@ class ViewController: UIViewController{
 
 
     @IBAction func notePressed(_ sender: UIButton) {
-        
-        
-        
+        print(sender.tag)
+        playSound(i: Int8(sender.tag))
+    
     }
     
-  
+    func playSound(i: Int8) {
+        if let url = Bundle.main.url(forResource: "note\(i)", withExtension: "wav"){
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(url as CFURL, &mySound)
+            AudioServicesPlaySystemSound(mySound)
+        }
+    }
 
+    //78udemy
+    func playSound2(i: Int8) {
+        if let url = Bundle.main.url(forResource: "note\(i)", withExtension: "wav"){
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(url as CFURL, &mySound)
+            AudioServicesPlaySystemSound(mySound)
+        }
+    }
 }
-
