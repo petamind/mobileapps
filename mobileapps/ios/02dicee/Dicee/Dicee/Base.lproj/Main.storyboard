@@ -63,8 +63,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dice1" width="288" height="288"/>
+        <image name="dice1" width="150" height="150"/>
         <image name="diceeLogo" width="147" height="96"/>
-        <image name="newbackground" width="333.5" height="311"/>
+        <image name="newbackground" width="333" height="311"/>
     </resources>
 </document>
