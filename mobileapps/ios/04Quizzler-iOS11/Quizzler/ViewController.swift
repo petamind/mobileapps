@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     //Place your instance variables here
@@ -60,12 +61,14 @@ class ViewController: UIViewController {
     
     func checkAnswer() {
        
-            if allQuestions.list[questionIndex].answer ==  pickedAnswer {
-                score += 1
-                
-            }
-            nextQuestion()
-            updateUI()
+        if allQuestions.list[questionIndex].answer ==  pickedAnswer {
+            score += 1
+            ProgressHUD.showSuccess()
+        } else {
+            ProgressHUD.showError()
+        }
+        nextQuestion()
+        updateUI()
     }
     
     
