@@ -1,0 +1,33 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="result_style">
+        <item name="android:layout_row">0</item>
+        <item name="android:layout_rowSpan">2</item>
+        <item name="android:layout_rowWeight">2</item>
+        <item name="android:layout_column">0</item>
+        <item name= "android:layout_columnSpan">4</item>
+        <item name= "android:gravity">bottom|right</item>
+        <item name="android:text">12345</item>
+        <item name= "android:textSize">50sp</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="cell_style">
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name= "android:gravity">fill</item>
+        <item name= "android:textSize">35sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">#FFD600</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+
+</resources>
