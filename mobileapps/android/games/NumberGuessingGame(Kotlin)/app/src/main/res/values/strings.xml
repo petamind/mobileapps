@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Number Guessing Game</string>
+    <string name="title_activity_game">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="wrong_title">Wrong</string>
+</resources>
