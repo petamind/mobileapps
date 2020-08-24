@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -27,7 +28,7 @@ public class GameView extends View {
     private Bitmap monster;
     private Rect monsterBounds;
 
-    Handler handler = new Handler() {
+    Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
 
@@ -81,8 +82,7 @@ public class GameView extends View {
     }
 
     @Override
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
+    public void onDraw(Canvas canvas) {
         canvas.drawBitmap(hero, null, heroBounds, null);
         if(monster != null)
             canvas.drawBitmap(monster, null, monsterBounds, null);
