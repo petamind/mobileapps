@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Hero VS. Monster (Custom View)"
