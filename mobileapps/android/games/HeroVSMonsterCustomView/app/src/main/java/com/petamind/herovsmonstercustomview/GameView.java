@@ -83,8 +83,8 @@ public class GameView extends View {
             //monster = null;
             randomMonster();
         }
-
-        handler.sendEmptyMessage(0);
+        postInvalidate();
+        //handler.sendEmptyMessage(0);
 
         return true;
     }
