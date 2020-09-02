@@ -41,21 +41,6 @@ public class GameView extends View {
         init();
     }
 
-    public GameView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init();
-    }
-
-    public GameView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
-    }
-
-    public GameView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
     private void init() {
         hero = BitmapFactory.decodeResource(getResources(), R.drawable.ic_hero);
         monster = BitmapFactory.decodeResource(getResources(), R.drawable.ic_monster);
