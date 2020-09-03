@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/rvsr"
+    android:title="Rect v Rect" />
+    <item android:id="@+id/rvsp"
+    android:title="Rect v Point" />
+    <item android:id="@+id/rvsc"
+        android:title="Rect v Circle" />
+</menu>
