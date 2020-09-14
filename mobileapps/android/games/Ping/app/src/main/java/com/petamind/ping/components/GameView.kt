@@ -14,13 +14,8 @@ import com.petamind.ping.R
 class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback, Runnable,
     GameLoop {
     override var frameRate: Int = 120
-        set(value) {
-            field = value
-        }
     override var timeToUpdate: Long = System.currentTimeMillis()
-        set(value) {
-            field = value
-        }
+
     private var mThread: Thread? = null
     private var mRunning: Boolean = false
     lateinit var mCanvas: Canvas
@@ -45,7 +40,10 @@ class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback
 
     private fun setup() {
         ball = Ball(this.context, R.drawable.ball)
-        players = arrayOf(Player(this.context, null), Player(this.context, null))
+        players = arrayOf(
+            Player(this.context, R.drawable.button),
+            Player(this.context, R.drawable.button)
+        )
         players[0].location.offsetTo(
             bounds.exactCenterX() - players[0].location.width() / 2,
             bounds.bottom - players[0].location.height()

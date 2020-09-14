@@ -16,7 +16,6 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
                 } else {
                     location.offset(o.right - location.right, 0f)
                 }
-
             }
 
             if (location.top <= 0 || location.bottom >= o.bottom) {
@@ -28,8 +27,6 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
                 }
                 endgame = true
             }
-
-            //if (collided) location.offset(movVec.x*ratio, movVec.y*ratio)
         }
 
         if (o is Player) {
@@ -57,17 +54,14 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
 
     init {
         this.movVec.set(6f, 8f)
-        //Thread(this).start()
     }
 
     override fun update() {
         if (shouldUpdate) {
             val current = currentTimeMillis()
-            val delta = current - timeToUpdate;
+            val delta = current - timeToUpdate
             ratio = 1f + delta.toFloat() * frameRate / 1000f
             timeToUpdate = current + 1000L / frameRate
-            //location.offset(movVec.x ,movVec.y )
-            //Log.d("render", "$delta : $ratio" )
             location.offset(
                 movVec.x * ratio,
                 movVec.y * ratio
@@ -75,11 +69,4 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
         }
     }
 
-//    override fun run() {
-//        while(true) {
-//            if(shouldUpdate){
-//                update()
-//            }
-//        }
-//    }
 }

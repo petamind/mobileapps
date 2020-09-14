@@ -22,13 +22,7 @@ class Player(context: Context, shapeId: Int?, isAI: Boolean = false) : Sprite(co
     }
 
     override var frameRate: Int = 30
-        set(value) {
-            field = value
-        }
     override var timeToUpdate: Long = System.currentTimeMillis()
-        set(value) {
-            field = value
-        }
 
     override fun update() {
         if (!shouldUpdate) {
