@@ -5,9 +5,6 @@ import android.graphics.RectF
 
 class Player(context: Context, shapeId: Int?, isAI: Boolean = false) : Sprite(context, shapeId) {
     var isAI = false
-        set(value) {
-            field = value
-        }
 
     init {
         this.isAI = isAI
