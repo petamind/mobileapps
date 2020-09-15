@@ -9,6 +9,10 @@ import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 
+/**
+ * @author Tung Nguyen
+ *
+ */
 //https://stackoverflow.com/questions/24561596/smoothing-out-android-game-loop
 class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback, Runnable,
     GameLoop {

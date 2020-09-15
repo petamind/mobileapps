@@ -7,11 +7,11 @@ class Ball(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
     var ratio: Float = 1f
 
 
-    override var updateRate: Int = 60
+    override var updateRate: Int = 100
     override var timeToUpdate: Long = currentTimeMillis()
 
     init {
-        this.movVec.set(6f, 8f)
+        this.movVec.set(3f, 4f)
     }
 
     override fun update() {

@@ -6,6 +6,9 @@ import android.graphics.Rect
 import android.view.MotionEvent
 import com.petamind.ping.R
 
+/**
+ * @author Tung Nguyen
+ */
 class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
 
     enum class STATE {
