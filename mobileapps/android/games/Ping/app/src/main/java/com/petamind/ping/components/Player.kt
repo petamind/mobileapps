@@ -5,7 +5,7 @@ import android.content.Context
 open class Player(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
     var score = 0
 
-    override var updateRate: Int = 30
+    override var updateRate: Int = 1
     override var timeToUpdate: Long = System.currentTimeMillis()
 
     override fun update() {
@@ -13,5 +13,4 @@ open class Player(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
             timeToUpdate = System.currentTimeMillis() + 1000L / updateRate
         }
     }
-
 }

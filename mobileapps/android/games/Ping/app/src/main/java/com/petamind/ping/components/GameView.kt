@@ -8,7 +8,6 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import com.petamind.ping.R
 
 //https://stackoverflow.com/questions/24561596/smoothing-out-android-game-loop
 class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback, Runnable,
@@ -37,15 +36,7 @@ class GameView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback
     }
 
     private fun setup(vsAI: Boolean = true) {
-        val ball = Ball(this.context, R.drawable.ball)
-        val players = arrayOf(
-            Player(this.context, R.drawable.button),
-            if (vsAI) AIPlayer(this.context, R.drawable.button, game)
-            else Player(this.context, R.drawable.button)
-        )
-
-        game = Game(ball, players, bounds)
-        if(vsAI) (players[1] as AIPlayer).game = game!!
+        game = Game(this.context, vsAI, bounds)
     }
 
     fun start() {

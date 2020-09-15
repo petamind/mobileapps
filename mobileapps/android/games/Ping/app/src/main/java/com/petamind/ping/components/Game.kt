@@ -1,10 +1,12 @@
 package com.petamind.ping.components
 
+import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.view.MotionEvent
+import com.petamind.ping.R
 
-class Game(ball: Ball, players: Array<Player>, bounds: Rect) : GameLoop {
+class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
 
     enum class STATE {
         END, PAUSED, STARTED
@@ -16,9 +18,14 @@ class Game(ball: Ball, players: Array<Player>, bounds: Rect) : GameLoop {
     var players: Array<Player>
 
     init {
-        this.players = players
-        this.ball = ball
         this.bounds = bounds
+        ball = Ball(context, R.drawable.ball)
+        players = arrayOf(
+            Player(context, R.drawable.button),
+            if (vsAI) AIPlayer(context, R.drawable.button, this) else
+                Player(context, R.drawable.button)
+        )
+
         players[0].location.offsetTo(
             bounds.exactCenterX() - players[0].location.width() / 2,
             bounds.bottom - players[0].location.height()

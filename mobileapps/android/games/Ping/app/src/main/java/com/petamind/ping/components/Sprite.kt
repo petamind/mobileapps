@@ -13,6 +13,7 @@ abstract class Sprite : GameLoop {
         }
     }
 
+    @Volatile
     var movVec = PointF()
     var paint = Paint()
     var context: Context? = null
