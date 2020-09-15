@@ -1,30 +1,17 @@
 package com.petamind.ping.components
 
 import android.content.Context
-import android.graphics.RectF
 
-class Player(context: Context, shapeId: Int?, isAI: Boolean = false) : Sprite(context, shapeId) {
-    var isAI = false
+open class Player(context: Context, shapeId: Int?) : Sprite(context, shapeId) {
+    var score = 0
 
-    init {
-        this.isAI = isAI
-        location = RectF(0f, 0f, 200f, 50f)
-        if (isAI) {
-            movVec.x = 5f
-        }
-    }
-
-    override fun collide(o: Any?): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override var frameRate: Int = 30
+    override var updateRate: Int = 30
     override var timeToUpdate: Long = System.currentTimeMillis()
 
     override fun update() {
-        if (!shouldUpdate) {
-            return
+        if (shouldUpdate) {
+            timeToUpdate = System.currentTimeMillis() + 1000L / updateRate
         }
-        timeToUpdate += 1000L / frameRate
     }
+
 }

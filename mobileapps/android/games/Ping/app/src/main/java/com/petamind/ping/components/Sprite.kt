@@ -19,13 +19,10 @@ abstract class Sprite : GameLoop {
     var location = RectF(0f, 0f, 80f, 80f)
     var shape: Bitmap? = null
     override fun render(canvas: Canvas?) {
-        if (shape != null && location != null) {
-            canvas?.drawBitmap(shape!!, null, location!!, paint)
+        if (shape != null) {
+            canvas?.drawBitmap(shape!!, null, location, paint)
         } else {
             canvas?.drawRect(location, paint)
         }
     }
-
-    abstract fun collide(o: Any?): Boolean
-
 }
