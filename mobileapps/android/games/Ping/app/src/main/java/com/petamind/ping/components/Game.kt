@@ -25,7 +25,7 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
         ball = Ball(context, R.drawable.ball)
         players = arrayOf(
             Player(context, R.drawable.button),
-            if (vsAI) AIPlayer(context, R.drawable.button, this) else
+            if (vsAI) BotPlayer(context, R.drawable.button, this) else
                 Player(context, R.drawable.button)
         )
 
@@ -58,7 +58,7 @@ class Game(context: Context, vsAI: Boolean = true, bounds: Rect) : GameLoop {
         if (o is MotionEvent) {
             if (o.y > bounds.exactCenterY()) {
                 players[0].location.offsetTo(o.x, players[0].location.top)
-            } else if (players[1] !is AIPlayer) {
+            } else if (players[1] !is BotPlayer) {
                 players[1].location.offsetTo(o.x, 0f)
             }
         }

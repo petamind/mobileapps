@@ -5,9 +5,9 @@ import android.content.Context
 /**
  * @author Tung Nguyen
  *
- * This class is to create an AI player that plays autonomously with human player.
+ * This class is to create an Bot player that plays autonomously with human player.
  */
-class AIPlayer(context: Context, shapeId: Int?, game: Game?) :
+class BotPlayer(context: Context, shapeId: Int?, game: Game?) :
     Player(context, shapeId) {
     var game: Game?
 
